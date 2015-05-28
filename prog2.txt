@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <conio.h>
+main()
+{
+        float minimum(float [],int );
+        float maksimum(float [],int );
+        float a[50];
+        int i,n;
+        printf("\n Podaj ilosc elementow ciagu: \n n = ");
+        scanf("%d",&n);
+        printf("\n Wczytaj elementy ciagu: \n");
+        for(i=0;i<n;i++)
+        {
+                printf(" x[%d] = ",i);
+                scanf("%f",&a[i]);
+        }
+        printf("\n Element minimalny ciagu: %f",minimum(a,n));
+        printf("\n Element maksymalny ciagu: %f",maksimum(a,n));
+        getch();
+        return 0;
+}
+float minimum(float a[],int n)
+{
+        float min;
+        int i;
+        min=a[0];
+        for(i=1;i<n;i++)
+        if(a[i]<min)
+                min=a[i];
+  return min;
+  }
+float maksimum(float a[],int n)
+{
+        float maks;
+        int i;
+        maks=a[0];
+        for(i=1;i<n;i++)
+                if(a[i]>maks)
+                        maks=a[i];
+        return maks;
+}
